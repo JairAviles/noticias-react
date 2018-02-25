@@ -6,7 +6,7 @@ class Articles extends Component {
     super(props);
     this.state = {
       articles: [],
-      source: '',
+      sourceId: ''
     }
     this.getArticles = this.getArticles.bind(this);
   }
@@ -19,18 +19,20 @@ class Articles extends Component {
     let response = await api.getArticlesBySource(this.props.match.params.source_id)
     this.setState({
       articles: response.articles,
-      source: response.source
+      sourceId: response.source
     })
   }
 
   render() {
     return (
-      <div className="Articles container">
+      <article className="Articles container">
       <br/>
       <a href="javascript:void(0);history.back();">
         <button className="btn btn-info">Volver</button>
       </a>
-        <h1 className="center-align">{this.state.source}</h1>
+        <header>
+          <h1 className="center-align">{this.state.sourceId}</h1>
+        </header>  
         <div className="row">
         {
           this.state.articles.map((article)=>
@@ -52,7 +54,7 @@ class Articles extends Component {
           </div>
         )}
         </div>
-      </div>
+      </article>
     );
   }
 }
