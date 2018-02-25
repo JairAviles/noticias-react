@@ -2,7 +2,7 @@
   "name": "noticias",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://JairAviles.github.io/noticias-react",
+  "homepage": "https://JairAviles.github.io/noticias-react",
   "dependencies": {
     "moment": "^2.20.1",
     "react": "^16.2.0",
